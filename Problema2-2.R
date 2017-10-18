@@ -45,3 +45,14 @@ mtext("Y",side=2,las=1,line=3)
 abline(0,PCAslope1,col='blue',lwd=2)
 abline(0,PCAslope2,col='green',lwd=2)
 
+##Parte de Martí
+
+data <- matrix(data=c(1, 2, 3, 3, 3, 5, 5, 4, 5, 6, 6, 5, 8, 7, 9, 8),nrow=2,ncol=8,byrow=FALSE)
+dataNorm <- (data-rowMeans(data))/c(sd(data[1,]),sd(data[2,]))
+(dataNorm %*% t(dataNorm)/(8-1))#sigma calculada a mano
+(sigma<-cov(t(dataNorm)))#sigma calculada con r
+
+eigen(sigma)
+
+
+
